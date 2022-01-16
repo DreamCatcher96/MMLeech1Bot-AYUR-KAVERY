@@ -63,9 +63,9 @@ async def upload_to_tg(
 ):
     base_file_name = os.path.basename(local_file_name)
     caption_str = ""
-    caption_str += "<code>"
+    caption_str += "<b>"
     caption_str += base_file_name
-    caption_str += "</code>"
+    caption_str += "</b>"
     if os.path.isdir(local_file_name):
         directory_contents = os.listdir(local_file_name)
         directory_contents.sort()
@@ -94,8 +94,8 @@ async def upload_to_tg(
             LOGGER.info("TODO")
             d_f_s = humanbytes(os.path.getsize(local_file_name))
             i_m_s_g = await message.reply_text(
-                "<b><i>📑Telegram doesn't Support Uploading this File.</i></b>\n"
-                f"<b><i>🎯Detected File Size: {d_f_s} </i></b>\n"
+                "<b><i>📑 Telegram doesn't Support Uploading this File.</i></b>\n"
+                f"<b><i>🎯 Detected File Size: {d_f_s} </i></b>\n"
                 "\n<code>🗃 Trying to split the files . . .</code>"
             )
             splitted_dir = await split_large_files(local_file_name)
@@ -106,8 +106,8 @@ async def upload_to_tg(
             ba_se_file_name = os.path.basename(local_file_name)
             await i_m_s_g.edit_text(
                 f"<b><i>📨 Detected File Size: {d_f_s}</i></b> \n"
-                f"📬<code>{ba_se_file_name}</code><i><b> splitted into {number_of_files} Files🗃.</b></i>\n"
-                "<i><b>📤Trying to upload to Telegram📤, Now...</b></i>"
+                f"📬 <code>{ba_se_file_name}</code><i><b> splitted into {number_of_files} Files 🗃.</b></i>\n"
+                "<i><b>📤 Trying to upload to Telegram 📤, Now...</b></i>"
             )
             for le_file in totlaa_sleif:
                 # recursion: will this FAIL somewhere?
@@ -329,7 +329,7 @@ async def upload_single_file(
         message_for_progress_display = message
         if not edit_media:
             message_for_progress_display = await message.reply_text(
-                "<b>🔰Status : <i>Starting Uploading...📤</i></b>\n\n🗃<b> File Name</b>: <code>{}</code>".format(os.path.basename(local_file_name))
+                "<b>🔰 Status : <i>Starting Uploading...📤</i></b>\n\n🗃<b> File Name</b>: <code>{}</code>".format(os.path.basename(local_file_name))
             )
             prog = Progress(from_user, client, message_for_progress_display)
         sent_message = await message.reply_document(
@@ -359,7 +359,7 @@ async def upload_single_file(
             message_for_progress_display = message
             if not edit_media:
                 message_for_progress_display = await message.reply_text(
-                    "<b>🔰Status : <i>Starting Uploading...📤</i></b>\n\n🗃<b> File Name</b>: <code>{}</code>".format(os.path.basename(local_file_name))
+                    "<b>🔰 Status : <i>Starting Uploading...📤</i></b>\n\n🗃<b> File Name</b>: <code>{}</code>".format(os.path.basename(local_file_name))
                 )
                 prog = Progress(from_user, client, message_for_progress_display)
             if local_file_name.upper().endswith(("MKV", "MP4", "WEBM", "FLV", "3GP", "AVI", "MOV", "OGG", "WMV", "M4V", "TS", "MPG", "MTS", "M2TS")):
@@ -446,7 +446,7 @@ async def upload_single_file(
                         disable_notification=True,
                         progress=prog.progress_for_pyrogram,
                         progress_args=(
-                            f"<b>🔰Status : <i>Starting Uploading...📤</i></b>\n\n🗃<b> File Name</b>: `{os.path.basename(local_file_name)}`",
+                            f"<b>🔰 Status : <i>Starting Uploading...📤</i></b>\n\n🗃<b> File Name</b>: `{os.path.basename(local_file_name)}`",
                             start_time,
                         ),
                     )
@@ -498,7 +498,7 @@ async def upload_single_file(
                         disable_notification=True,
                         progress=prog.progress_for_pyrogram,
                         progress_args=(
-                            f"<b>🔰Status : <i>Starting Uploading...📤</i></b>\n\n🗃<b> File Name</b>: `{os.path.basename(local_file_name)}`",
+                            f"<b>🔰 Status : <i>Starting Uploading...📤</i></b>\n\n🗃<b> File Name</b>: `{os.path.basename(local_file_name)}`",
                             start_time,
                         ),
                     )
@@ -536,7 +536,7 @@ async def upload_single_file(
                         disable_notification=True,
                         progress=prog.progress_for_pyrogram,
                         progress_args=(
-                            f"<b>🔰Status : <i>Starting Uploading...📤</i></b>\n\n🗃<b> File Name</b>: `{os.path.basename(local_file_name)}`",
+                            f"<b>🔰 Status : <i>Starting Uploading...📤</i></b>\n\n🗃<b> File Name</b>: `{os.path.basename(local_file_name)}`",
                             start_time,
                         ),
                     )

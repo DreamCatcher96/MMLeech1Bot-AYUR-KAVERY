@@ -14,12 +14,12 @@ async def new_join_f(client, message):
     chat_type = message.chat.type
     if chat_type != "private":
         await message.reply_text(
-            f"""<b>🙋🏻‍♂️ Hello dear!\n\n This Is A Leech Bot .This Chat Is Not Supposed To Use Me</b>\n\n<b>Current CHAT ID: <code>{message.chat.id}</code>""",
+            f"""<b>🙋🏻‍♂️ Hello dear!\n\n🤖 This Is A Leech Bot, Exclusively Made For Team #MALLUMOVIES 🤒\n\nThis Grouop Is Not Supposed To Use Me, Please Contact My Boss 🚶🚶</b>\n\n<b>YOUR GROUP ID :</b> <code>{message.chat.id}</code>""",
             parse_mode="html",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton('🤖 OWNER 👤', url='https://t.me/WhitE_Devil09')
+                        InlineKeyboardButton('🤖 MY BOSS 👤', url='https://t.me/WhitE_Devil09')
                     ]
                 ]
                )

@@ -36,6 +36,6 @@ async def help_message_f(client, message):
     else:
         utxt = "Streamable"
     await message.reply_text(
-        """<b>Hello 👋 This is TorrentleechBot 🤖\n\nⓂ️ Exclusively Made For Team #MalluMovies 😍</b>""",
+        """<b>Hello 👋 This is TorrentleechBot!\n\nⓂ️ Exclusively Made For Team #MalluMovies 😍</b>""",
         disable_web_page_preview=True,
     )
